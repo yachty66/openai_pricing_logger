@@ -14,13 +14,9 @@ PRICING = load_pricing()
 def get_rate_per_token(model, prompt_tokens, completion_tokens):
     if model == "gpt-3.5-turbo":
         usage = PRICING[model]["usage"]
-        #add available tokens 
         tokens = prompt_tokens + completion_tokens
-        #usage is for every 1000 tokens, so if i have lets say 
-        #i can just divide usage by 1000 and multiply it with tokens
         cost = (usage / 1000) * tokens
         return cost
-    #i need to figure out what exactly the models are which are available
     elif model == "gpt-4":
         prompt = PRICING[model]["prompt"]
         cost_prompt = (prompt / 1000) * prompt_tokens
@@ -38,7 +34,7 @@ def log_cost_and_timestamp(func):
         timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
         cost = get_rate_per_token(model, response["usage"]["prompt_tokens"], response["usage"]['completion_tokens'])
         cost_float = float(cost)
-        cost_str = f"{cost_float:.10f}"  # Convert to string with a fixed number of decimal places
+        cost_str = f"{cost_float:.10f}" 
         cost_formatted = cost_str.rstrip('0').rstrip('.')
         print(cost_formatted)
         log_file = 'api_calls.log'
