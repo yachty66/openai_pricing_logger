@@ -3,15 +3,13 @@ import functools
 import json
 import openai
 import time
-
+import os
 
 def load_pricing():
     with open("pricing.json") as f:
         return json.load(f)
 
-
 PRICING = load_pricing()
-
 
 def get_rate_per_token(model, prompt_tokens, completion_tokens):
     if model == "gpt-3.5-turbo":
@@ -32,8 +30,6 @@ def get_rate_per_token(model, prompt_tokens, completion_tokens):
         return cost 
     #TODO add support for other models
 
-
-
 def log_cost_and_timestamp(func):
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
@@ -46,11 +42,23 @@ def log_cost_and_timestamp(func):
         cost_formatted = cost_str.rstrip('0').rstrip('.')
         print(cost_formatted)
         log_file = 'api_calls.log'
+        if not os.path.exists(log_file):
+            with open(log_file, 'w') as f:
+                f.write('')
+        with open(log_file, 'r') as f:
+            total_cost = 0
+            for line in f:
+                entry = json.loads(line)
+                total_cost += float(entry['cost'])
+        total_cost += cost_float
+        total_cost_str = f"{total_cost:.10f}"
+        total_cost_formatted = total_cost_str.rstrip('0').rstrip('.')
         with open(log_file, 'a') as f:
             log_entry = {
                 'timestamp': timestamp,
                 'model': model,
                 'cost': cost_formatted,
+                'total_cost': total_cost_formatted,
             }
             f.write(json.dumps(log_entry) + '\n')
         return response

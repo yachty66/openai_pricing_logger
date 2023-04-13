@@ -2,13 +2,18 @@
 
 ## Tasks
 - [x] add real prices
-- [ ] get number of tokens from response
-- [ ] define which data should be visible inside the logs 
-- [ ] add missing data 
+- [x] get number of tokens from response
+- [x] define which data should be visible inside the logs 
+- [x] add column in logs for total
+- [x] test if logs work for several messages in the stack
+- [x] convert total costs to something readable 
+
 - [ ] test with python package conditions 
+
 - [ ] try to create a python package for it and push it to python packages
+
 - [ ] check if it works as expected   
-- [ ] add cli utility which returns you the prices from the current log file like "log 2 5" where 2 and 5 are the id's from the log entry. and log returns the full price. 
+
 
 - https://openai.deepakness.com/ --> only provides information about 
 

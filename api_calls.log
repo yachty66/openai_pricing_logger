@@ -1,6 +1,2 @@
-{"timestamp": "2023-04-12 20:10:35", "model": "gpt-3.5-turbo", "cost": 5.2e-05}
-{"timestamp": "2023-04-12 20:15:00", "model": "gpt-3.5-turbo", "cost": 5.2e-05}
-{"timestamp": "2023-04-12 20:17:10", "model": "gpt-3.5-turbo", "cost": 5.2e-05}
-{"timestamp": "2023-04-12 20:18:42", "model": "gpt-3.5-turbo", "cost": "5.2e-05"}
-{"timestamp": "2023-04-12 20:19:20", "model": "gpt-3.5-turbo", "cost": "0.00005"}
-{"timestamp": "2023-04-12 20:20:00", "model": "gpt-3.5-turbo", "cost": "0.000052"}
+{"timestamp": "2023-04-12 21:32:44", "model": "gpt-3.5-turbo", "cost": "0.000084", "total_cost": "0.000084"}
+{"timestamp": "2023-04-12 21:32:54", "model": "gpt-3.5-turbo", "cost": "0.000084", "total_cost": "0.000168"}
