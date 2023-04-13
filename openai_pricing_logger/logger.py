@@ -4,15 +4,11 @@ import json
 import openai
 import time
 import os
+import importlib.resources as resources
+
 
 def load_pricing():
-    # Get the current script's directory
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    
-    # Construct the path to the pricing.json file within the package
-    pricing_path = os.path.join(script_dir, "pricing.json")
-
-    with open(pricing_path) as f:
+    with resources.open_text('openai_pricing_logger', 'pricing.json') as f:
         return json.load(f)
 
 PRICING = load_pricing()

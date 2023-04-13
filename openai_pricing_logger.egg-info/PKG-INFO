@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: openai-pricing-logger
-Version: 0.1
+Version: 0.0.1
 Summary: A package to log OpenAI API costs
 Home-page: https://github.com/yachty66/openai_pricing_logger
 Author: Max Hager
