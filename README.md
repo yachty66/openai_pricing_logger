@@ -8,7 +8,7 @@
 - [x] test if logs work for several messages in the stack
 - [x] convert total costs to something readable 
 
-- [ ] test with python package conditions 
+- [x] test with python package conditions 
 
 - [ ] try to create a python package for it and push it to python packages
 

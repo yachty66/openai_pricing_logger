@@ -1,5 +1,5 @@
 import openai
-from logger import openai_api_listener
+from openai_pricing_logger import openai_api_listener
 import config
 
 openai.api_key = config.key

@@ -6,7 +6,13 @@ import time
 import os
 
 def load_pricing():
-    with open("pricing.json") as f:
+    # Get the current script's directory
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Construct the path to the pricing.json file within the package
+    pricing_path = os.path.join(script_dir, "pricing.json")
+
+    with open(pricing_path) as f:
         return json.load(f)
 
 PRICING = load_pricing()
