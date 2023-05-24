@@ -26,6 +26,12 @@ def get_rate_per_token(model, prompt_tokens, completion_tokens):
         cost_completion = (completion / 1000) * completion_tokens
         cost = cost_prompt + cost_completion
         return cost 
+    elif model == "text-embedding-ada-002":
+        embedding = PRICING[model]["embedding"]
+        cost = (embedding / 1000) * completion_tokens
+        return cost
+    
+
     #TODO add support for other models
 
 def log_cost_and_timestamp(func):

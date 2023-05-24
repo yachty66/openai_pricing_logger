@@ -6,4 +6,7 @@
     "gpt-3.5-turbo": {
         "usage": 0.002
     }
+    "text-embedding-ada-002": {
+        "embedding":  0.0004
+    }
 }
